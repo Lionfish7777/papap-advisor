@@ -1,0 +1,7 @@
+.read-receipt {
+  font-size: 11px;
+  color: rgba(201, 168, 76, 0.55);
+  padding-left: 4px;
+  display: block;
+  user-select: none;
+}

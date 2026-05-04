@@ -1,0 +1,15 @@
+# Local config
+.mcp.json
+.DS_Store
+
+# Internal workflow docs
+CLAUDE.md
+AGENT.md
+SKILL.md
+
+# Env files (also covered in subdirectory .gitignores)
+.env
+*.env.local
+
+# Dependencies (also covered in subdirectory .gitignores)
+node_modules/
