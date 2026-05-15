@@ -1,34 +1,53 @@
-# Papap — AI Financial Advisor
+# Papap
 
-> *"Compound interest is the eighth wonder of the world. He who understands it, earns it."*
+We built Papap as a full product concept because we wanted to understand what
+it means to give a software product a genuine human point of view. Papap is
+not a chatbot. It is a character. A market veteran born in 1942, built to
+deliver eighty years of financial wisdom through the intimacy of a text
+conversation. The interface is deliberately minimal. No dashboards, no charts.
+Just a voice that has survived every crash since the postwar boom, speaking
+directly to you.
 
-Papap is not a chatbot. It is a character — a market veteran born in 1942, built to deliver eighty years of financial wisdom through the intimacy of a text conversation. The interface is deliberately minimal: no dashboards, no charts. Just a voice that has survived every crash since the postwar boom, speaking directly to you.
-
-Powered by Claude claude-opus-4-6 and ElevenLabs voice synthesis. Built on React, Node.js, and Express.
+Powered by Claude and ElevenLabs. Built on React, Node.js, and Express.
 
 ---
 
-## Features
+## What We Built Into It
 
-- **Persona-driven AI** — Papap responds in short, warm, text-message-style bursts. Warren Buffett's discipline. Bob Proctor's warmth. Never hypes. Never gambles. Always teaches.
-- **Deliberate UX rhythm** — Responses split across multiple bubbles with timed delays, engineered to feel like receiving real texts rather than reading an API response
-- **Voice synthesis** — Every reply is spoken aloud via ElevenLabs (`eleven_turbo_v2`), streamed directly from the server. Graceful fallback to the browser's Web Speech API when ElevenLabs is not configured — voice is never optional, only sourced differently
-- **Multimodal input** — Users can attach images, documents, or screenshots. Attachments are encoded and passed to Claude as structured content blocks alongside the user's message
-- **Persistent conversation memory** — The full message history is rebuilt and sent to Claude on every request, preserving context across the entire session
+**Persona-driven AI.** Papap responds in short, warm, text-message-style
+bursts. Warren Buffett's discipline. Bob Proctor's warmth. Never hypes.
+Never gambles. Always teaches.
+
+**Deliberate UX rhythm.** Responses split across multiple bubbles with timed
+delays, engineered to feel like receiving real texts rather than reading an
+API response.
+
+**Voice synthesis.** Every reply is spoken aloud via ElevenLabs
+(`eleven_turbo_v2`), streamed directly from the server. When ElevenLabs is
+not configured, it falls back to the browser's Web Speech API. Voice is never
+optional, only sourced differently.
+
+**Multimodal input.** Users can attach images, documents, or screenshots.
+Attachments are encoded and passed to Claude as structured content blocks
+alongside the user's message.
+
+**Persistent conversation memory.** The full message history is rebuilt and
+sent to Claude on every request, preserving context across the entire session.
 
 ---
 
 ## Tech Stack
 
-**Frontend**
+Frontend
 - React 18 + Vite
-- Component architecture — `ChatWindow`, `ChatInput`, `MessageBubble`, `TypingIndicator`, `ReadReceipt`, `LandingPage`
+- Components: `ChatWindow`, `ChatInput`, `MessageBubble`, `TypingIndicator`,
+  `ReadReceipt`, `LandingPage`
 - Axios for API communication
 
-**Backend**
+Backend
 - Node.js + Express
-- Anthropic SDK — `claude-opus-4-6`
-- ElevenLabs REST API — `eleven_turbo_v2`, streamed as `audio/mpeg`
+- Anthropic SDK running `claude-opus-4-6`
+- ElevenLabs REST API running `eleven_turbo_v2`, streamed as `audio/mpeg`
 - CORS configured for local development
 
 ---
@@ -58,20 +77,21 @@ server/                   # Node.js + Express API
 
 ## Getting Started
 
-### Prerequisites
+Prerequisites
 - Node.js 18+
 - Anthropic API key
-- ElevenLabs API key + Voice ID *(optional — app falls back to browser TTS without these)*
+- ElevenLabs API key and Voice ID (optional, the app falls back to browser TTS
+  without these)
 
-### Install & Run
+Install and Run
 
-**1. Clone the repo**
+1. Clone the repo
 ```bash
 git clone https://github.com/Lionfish7777/papap-advisor.git
 cd papap-advisor
 ```
 
-**2. Start the server**
+2. Start the server
 ```bash
 cd server
 npm install
@@ -80,14 +100,14 @@ cp .env.example .env
 npm start
 ```
 
-**3. Start the client**
+3. Start the client
 ```bash
 cd client
 npm install
 npm run dev
 ```
 
-Client: `http://localhost:5173` — Server: `http://localhost:5001`
+Client runs at `http://localhost:5173` and server at `http://localhost:5001`
 
 ---
 
@@ -100,22 +120,29 @@ ELEVENLABS_VOICE_ID=your_voice_id            # optional
 PORT=5001
 ```
 
-Without ElevenLabs keys, voice routes return a 503 and the client falls back to the browser's `SpeechSynthesis` API automatically. The persona still speaks — just through a different channel.
+Without ElevenLabs keys, voice routes return a 503 and the client falls back
+to the browser's `SpeechSynthesis` API automatically. The persona still
+speaks, just through a different channel.
 
 ---
 
 ## Prompt Engineering
 
-The system prompt is the core of the product. Papap is instructed to respond in 1–3 sentence bursts — lowercase, conversational, unhurried. Occasionally split across 2–3 paragraphs to mimic real texting rhythm. Every response ends with a grounded insight or a small, concrete task.
+The system prompt is the core of the product. Papap is instructed to respond
+in short bursts, lowercase, conversational, unhurried. Occasionally split
+across multiple paragraphs to mimic real texting rhythm. Every response ends
+with a grounded insight or a small, concrete task.
 
-Client-side, Claude's reply is split at double-newlines and each segment is rendered as a separate `MessageBubble` with a 600ms stagger — transforming a single API response into a sequence of arriving texts. The effect is intentional: it makes the advisor feel present, not instantaneous.
+Client-side, Claude's reply is split at double-newlines and each segment is
+rendered as a separate `MessageBubble` with a 600ms stagger, transforming a
+single API response into a sequence of arriving texts. The effect is
+intentional. It makes the advisor feel present, not instantaneous.
 
-The persona — patience, precision, earned authority — is held entirely in the prompt. No fine-tuning. No retrieval. Just language, carefully chosen.
+The persona, patience, precision, and earned authority, is held entirely in
+the prompt. No fine-tuning. No retrieval. Just language, carefully chosen.
 
 ---
 
 ## Status
 
 Active development. Private.
-
----
