@@ -155,6 +155,28 @@ the prompt. No fine-tuning. No retrieval. Just language, carefully chosen.
 
 ---
 
+## What We Learned
+
+We had built features before. We had never built a character. Papap taught us
+that there is a different kind of engineering in giving a product a genuine point
+of view. Every technical decision ran through the same question: does this feel
+like Papap or does it feel like software. We are avid readers and writers and
+that is the kind of problem we want to keep solving.
+
+Multi turn context management was where we understood what a language model
+actually needs to stay coherent. Every request rebuilds the full message history
+and sends it to Claude. That is not a workaround. That is the architecture.
+Earning that understanding meant building it, breaking it, and rebuilding it.
+We are newer to this field. That is how we learn.
+
+The timed bubble rendering was where UX became tangible for us in a way it had
+not been before. A single API response split across three bubbles with 600
+millisecond delays feels like receiving texts from a real person. The same
+content delivered instantly feels like reading a document. The engineering behind
+it is minimal. What it taught us about rhythm and experience design is not.
+
+---
+
 ## Status
 
-Active development. Private.
+Public. Active development. Deployed to Netlify.
