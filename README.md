@@ -14,8 +14,13 @@ Powered by Claude and ElevenLabs. Built on React, Node.js, and Express.
 
 https://papap-lionfish.netlify.app
 
-The full product experience is in the demo. AI responses and Papap's voice run
-locally. Follow the Getting Started instructions below.
+The live demo shows the landing page and product design. The full experience,
+AI responses and Papap's voice, requires the local setup. Follow the Getting
+Started instructions below.
+
+## Screenshots
+
+![Papap](screenshots/demo.png)
 
 ---
 
