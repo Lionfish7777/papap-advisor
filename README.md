@@ -177,6 +177,17 @@ it is minimal. What it taught us about rhythm and experience design is not.
 
 ---
 
+## Future Improvements
+
+We gave Papap a voice and a personality. The next version is where he gets a memory. When he remembers you, everything changes.
+
+- Database backed conversation history. Right now every session starts fresh. Persistent memory is what turns Papap from a conversation into a relationship.
+- Structured document analysis. Users can attach images today. Real support for financial statements, portfolios, and tax documents is the next capability that makes this genuinely useful.
+- Subscription model. The product is built for it. The Stripe architecture from TaskFlow Pro applies directly and we are ready to wire it in.
+- Custom voice. ElevenLabs supports voice cloning. A voice built specifically for who Papap is would complete the character in a way no off the shelf option can.
+
+---
+
 ## Status
 
 Public. Active development. Deployed to Netlify.
