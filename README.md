@@ -10,6 +10,14 @@ directly to you.
 
 Powered by Claude and ElevenLabs. Built on React, Node.js, and Express.
 
+## Live Demo
+
+https://papap-lionfish.netlify.app
+
+The live demo shows the full UI and product experience. To run Papap with live
+AI responses and voice, follow the Getting Started instructions below. You will
+need your own Anthropic and ElevenLabs API keys.
+
 ---
 
 ## What We Built Into It
